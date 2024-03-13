@@ -44,14 +44,15 @@ return require('packer').startup(function(use)
 		"neovim/nvim-lspconfig",
 	}
 
+
 	use { "catppuccin/nvim", as = "catppuccin" }
 
 	-- debuggers
 	use 'mfussenegger/nvim-dap'
 	use 'mfussenegger/nvim-dap-python'
+	use 'leoluz/nvim-dap-go'
 	use 'theHamsta/nvim-dap-virtual-text'
 	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
 		requires = { {'nvim-lua/plenary.nvim'} }
@@ -92,19 +93,9 @@ return require('packer').startup(function(use)
 	}
 
 	-- tests
-	use 'vim-test/vim-test'
-	use 'nvim-neotest/neotest-vim-test'
 	use "nvim-lua/plenary.nvim"
 	use 'antoinemadec/FixCursorHold.nvim'
-	use {
-		"nvim-neotest/neotest",
-		requires = {
-			"nvim-neotest/neotest-python",
-			"nvim-lua/plenary.nvim",
-			"antoinemadec/FixCursorHold.nvim",
-			"nvim-treesitter/nvim-treesitter"
-		}
-	}
+
 	if packer_bootstrap then
 		require('packer').sync()
 	end
