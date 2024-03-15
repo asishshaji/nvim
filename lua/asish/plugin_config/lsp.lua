@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup{
-	ensure_installed = {"pyright"}
+	ensure_installed = {"pyright", "gopls", "tsserver"}
 }
 
 local on_attach = function(client, bufnr)
@@ -31,6 +31,10 @@ lspconfig.pyright.setup{
 	capabilities = lsp_capabilities
 }
 
+lspconfig.tsserver.setup{
+	on_attach = on_attach,
+	capabilities = lsp_capabilities
+}
 
 lspconfig.gopls.setup {
 	on_attach = on_attach,

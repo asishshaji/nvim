@@ -63,7 +63,7 @@ return require('packer').startup(function(use)
 	use 'm4xshen/autoclose.nvim'
 	use 'tanvirtin/monokai.nvim'
 	-- These optional plugins should be loaded directly because of a bug in Packer lazy loading
-	use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
+	
 	use 'romgrk/barbar.nvim'
 	use {
 		"aznhe21/actions-preview.nvim",
@@ -95,6 +95,11 @@ return require('packer').startup(function(use)
 	-- tests
 	use "nvim-lua/plenary.nvim"
 	use 'antoinemadec/FixCursorHold.nvim'
+
+	-- git 
+	use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
+	use 'f-person/git-blame.nvim'
+	use 'tanvirtin/vgit.nvim'
 
 	if packer_bootstrap then
 		require('packer').sync()
