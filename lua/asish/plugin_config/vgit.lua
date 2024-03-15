@@ -15,6 +15,7 @@ require('vgit').setup({
     ['n <leader>gd'] = function() require('vgit').project_diff_preview() end,
     ['n <leader>gq'] = function() require('vgit').project_hunks_qf() end,
     ['n <leader>gx'] = function() require('vgit').toggle_diff_preference() end,
+    ['n <leader>gc'] = function() require('vgit').project_commit_preview() end,
   },
   settings = {
     git = {
