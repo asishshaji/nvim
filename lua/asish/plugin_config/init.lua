@@ -10,5 +10,6 @@ require("asish.plugin_config.dap")
 require("asish.plugin_config.dap-ui")
 require("asish.plugin_config.dap-virtual-text")
 require("asish.plugin_config.vgit")
+require("asish.plugin_config.neoformat")
 require("asish.plugin_config.git-blame")
 

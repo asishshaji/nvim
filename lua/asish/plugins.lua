@@ -36,6 +36,8 @@ return require('packer').startup(function(use)
 	use "hrsh7th/cmp-cmdline"
 	use "hrsh7th/cmp-nvim-lsp"
 	-- use "hrsh7th/cmp-nvim-Usp"
+	
+	use "sbdchd/neoformat"
 
 	-- lsp
 	use {
