@@ -36,6 +36,13 @@ return require('packer').startup(function(use)
 	use "hrsh7th/cmp-cmdline"
 	use "hrsh7th/cmp-nvim-lsp"
 	-- use "hrsh7th/cmp-nvim-Usp"
+	use({
+		"L3MON4D3/LuaSnip",
+		-- follow latest release.
+		tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		-- install jsregexp (optional!:).
+		run = "make install_jsregexp"
+	})
 	
 	use "sbdchd/neoformat"
 
@@ -57,8 +64,9 @@ return require('packer').startup(function(use)
 	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
-		requires = { {'nvim-lua/plenary.nvim'} }
+		requires = { {'nvim-lua/plenary.nvim'} },
 	}
+	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	use (
 		'nvim-treesitter/nvim-treesitter', {run =':TSUpdate'}
 	)
@@ -102,6 +110,7 @@ return require('packer').startup(function(use)
 	use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
 	use 'f-person/git-blame.nvim'
 	use 'tanvirtin/vgit.nvim'
+	use { "nvim-neotest/nvim-nio" }
 
 	if packer_bootstrap then
 		require('packer').sync()
