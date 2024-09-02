@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup{
-	ensure_installed = {"pyright", "gopls", "tsserver", "clangd"}
+	ensure_installed = {"pyright", "gopls", "tsserver", "clangd", "zls"}
 }
 
 local on_attach = function(client, bufnr)
@@ -22,6 +22,10 @@ local lspconfig = require("lspconfig")
 local util = require "lspconfig/util"
 
 lspconfig.lua_ls.setup{
+	on_attach = on_attach,
+	capabilities = lsp_capabilities
+}
+lspconfig.zls.setup{
 	on_attach = on_attach,
 	capabilities = lsp_capabilities
 }
